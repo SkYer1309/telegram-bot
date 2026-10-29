@@ -1,0 +1,34 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: student
+    changes:
+      - createTable:
+          tableName: notification_task
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: chat_id
+                type: bigint
+                constraints:
+                  nullable: false
+            - column:
+                name: message_text
+                type: varchar(1000)
+                constraints:
+                  nullable: false
+            - column:
+                name: notification_time
+                type: datetime
+                constraints:
+                  nullable: false
+            - column:
+                name: is_sent
+                type: boolean
+                defaultValueBoolean: false
