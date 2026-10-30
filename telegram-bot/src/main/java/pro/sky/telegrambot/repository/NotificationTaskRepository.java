@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public interface NotificationTaskRepository extends JpaRepository<NotificationTask, Long> {
 
+    List<NotificationTask> findByIsSentFalseAndNotificationTime(LocalDateTime notificationTime);
+
     List<NotificationTask> findByIsSentFalseAndNotificationTimeBefore(LocalDateTime time);
 
     List<NotificationTask> findByIsSentFalseAndNotificationTimeAfter(LocalDateTime time);
